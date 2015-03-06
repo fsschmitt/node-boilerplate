@@ -1,0 +1,45 @@
+{
+  "name": "placeholder",
+  "version": "0.1.0",
+  "description": "A basic Node project package.json placeholder",
+  "author": {
+    "name": "Isaac Whitfield",
+    "email": "iwhitfield@appcelerator.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/iwhitfield/my_git_repo.git"
+  },
+  "bugs": {
+    "email": "iwhitfield@appcelerator.com",
+    "url": "http://github.com/iwhitfield/my_git_repo/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "word1",
+    "word2",
+    "word3"
+  ],
+  "scripts": {
+    "coverage": "mocha -r blanket -R html-cov test",
+    "lcov": "mocha -r blanket -R mocha-lcov-reporter",
+    "test": "mocha test"
+  },
+  "dependencies": { },
+  "devDependencies": {
+    "blanket": "1.1.6",
+    "codeclimate-test-reporter": "0.0.4",
+    "mocha": "2.1.0",
+    "mocha-lcov-reporter": "0.0.1"
+  },
+  "config": {
+    "blanket": {
+      "data-cover-never": [
+        "node_modules",
+        "test"
+      ],
+      "pattern": [ ]
+    }
+  }
+}
