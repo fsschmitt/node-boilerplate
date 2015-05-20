@@ -2,6 +2,9 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
+        clean: {
+            coverage: ['coverage']
+        },
         mochacov: {
             html: {
                 options: {
@@ -42,12 +45,13 @@ module.exports = function(grunt) {
     });
 
     // Load grunt plugins for modules
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-mocha-cov');
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // register tasks
-    grunt.registerTask('coverage', ['mochacov:html','mochacov:lcov']);
+    grunt.registerTask('coverage', ['clean:coverage','mochacov:html','mochacov:lcov']);
     grunt.registerTask('default', ['jshint', 'mochaTest']);
     grunt.registerTask('lint', ['jshint']);
     grunt.registerTask('test', ['mochaTest']);
